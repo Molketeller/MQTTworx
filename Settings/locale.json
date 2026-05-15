@@ -4,7 +4,10 @@
       "Lock": "Sperre",
       "Autolock": "Autolock",
       "Autolock-Delay": "Autolock-Verzögerung",
-      "Torque Adjustment": "Drehmomentanpassung"
+      "Torque Adjustment": "Drehmomentanpassung",
+      "OLM as border": "OLM für Begrenzungen",
+      "OLM as shortcuts": "OLM für Shortcuts",
+      "Use ACS": "Benutze ACS"
     }
   }
 }

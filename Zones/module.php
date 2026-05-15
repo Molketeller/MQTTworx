@@ -60,6 +60,8 @@ class MQTTworxZones extends IPSModule
 				}
 				break;
 			case "mzv":
+				$this->RegisterVariableString('WRX_mzv', $this->Translate('zonedata'), '', 110);
+				$this->SetValue('WRX_mzv', json_encode($Payload));
 				$this->WriteAttributeString("mzv", json_encode($Payload));
 				if (!IPS_VariableProfileExists('ShareinZone.WRX')) {
 					IPS_CreateVariableProfile('ShareinZone.WRX', 1);

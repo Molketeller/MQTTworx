@@ -7,8 +7,6 @@
 
   <body>
 	<h1>IPS-Modul zur Einbindung von Worx-Landroid-Mährobotern in IP-Symcon via Landroid-Bridge</h1>
-	<h2>Ende des Supports</h2>
-	Dieses Repository wurde geschlossen und erhält keine weiteren Updates
 	<h2>Grundsätzliches</h2>
 	Das Modul regelt die Kommunikation zwischen der <a href="https://github.com/nefiertsrebliS/mqtt-landroid-bridge">MQTT-Landroid-Bridge</a> und IP-Symcon.<br>
 	Die MQTT-Landroid-Bridge stellt die Verbindung zur WorxCloud her. <b>Die Funktion der MQTT-Landroid-Bridge kann nur sichergestellt werden, solange Worx die Cloud-Schnittstelle nicht verändert.</b><br>
@@ -82,6 +80,10 @@
 	  <tr>
 		<td>V3.07 &nbsp;&nbsp;&nbsp;&nbsp;</td>
 		<td>Fix: Scheduler - Point hat denselben Start wie PointIDx</td>
+	  </tr>
+	  <tr>
+		<td>V3.08 &nbsp;&nbsp;&nbsp;&nbsp;</td>
+		<td>Neu: OLM und ACS können deaktiviert werden</td>
 	  </tr>
 	</table>
   </body>

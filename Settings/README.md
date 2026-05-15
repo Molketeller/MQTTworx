@@ -28,6 +28,21 @@
 		<td><b><i>WRX_Torque($ID, $Value)</i></b></td>
 		<td>Anpassung des Antriebsmomentes</td>
 	  </tr>
+	  <tr>
+		<td>4.</td>
+		<td><b><i>WRX_DF_cut($ID, $Value)</i></b></td>
+		<td>OLM für verbotene Zonen verwenden</td>
+	  </tr>
+	  <tr>
+		<td>5.</td>
+		<td><b><i>WRX_DF_fh($ID, $Value)</i></b></td>
+		<td>OLM für Shortcuts verwenden</td>
+	  </tr>
+	  <tr>
+		<td>6.</td>
+		<td><b><i>WRX_US($ID, $Value)</i></b></td>
+		<td>ACS verwenden</td>
+	  </tr>
 	</table>
   </body>
 </html>

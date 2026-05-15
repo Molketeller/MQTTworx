@@ -12,6 +12,7 @@ class MQTTworxInfo extends IPSModule
         //Never delete this line!
         parent::Create();
 		$this->ConnectParent('{FC4FCFBA-365C-5880-4C10-C224BD1E5F3D}');
+		$this->RegisterAttributeString("dt", "");
     }
 
 #================================================================================================
@@ -182,6 +183,21 @@ class MQTTworxInfo extends IPSModule
 				}
 				$this->RegisterVariableInteger('WRX_rain_cnt', $this->Translate('remaining Raindelay'), 'min.WRX', 3);
 				$this->SetValue('WRX_rain_cnt', $Payload->cnt);
+				break;
+			case "dt":
+				$this->WriteAttributeString("dt", $Payload);
+      	/* $this->RegisterVariableString('WRX_datetime', $this->Translate('datetime'), '', 240);
+				$old=$this->GetValue('WRX_datetime');
+        if (strlen($old)<11) $old="           ";
+        $new=substr($Payload,6,4)."-".substr($Payload,3,2)."-".substr($Payload,0,2)." ";
+        $this->SetValue('WRX_datetime', $new.substr($old,11));
+        */
+				break;
+			case "tm":
+      	$dt = $this->ReadAttributeString("dt");
+        $new=substr($dt,6,4)."-".substr($dt,3,2)."-".substr($dt,0,2)." ";
+        $this->RegisterVariableString('WRX_datetime', $this->Translate('datetime'), '', 240);
+				$this->SetValue('WRX_datetime', $new.$Payload);
 				break;
 
 			default:

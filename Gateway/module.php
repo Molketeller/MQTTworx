@@ -148,6 +148,12 @@ class MQTTworxGateway extends IPSModule
 			if (property_exists($Payload->cfg, 'mzv')){
 				$this->sendDataToDevices('Zones', 'mzv', $Payload->cfg->mzv);
 			}
+			if (property_exists($Payload->cfg, 'dt')){
+				$this->sendDataToDevices('Infos', 'dt', $Payload->cfg->dt);
+			}
+			if (property_exists($Payload->cfg, 'tm')){
+				$this->sendDataToDevices('Infos', 'tm', $Payload->cfg->tm);
+            }
 			if (property_exists($Payload->cfg, 'tq')){
 				$this->sendDataToDevices('Settings', 'tq', $Payload->cfg->tq);
 			}
@@ -156,6 +162,21 @@ class MQTTworxGateway extends IPSModule
 					$this->sendDataToDevices('Settings', 'lvl', $Payload->cfg->al->lvl);
 					$this->sendDataToDevices('Settings', 't', $Payload->cfg->al->t);
 				}
+			}
+			if (property_exists($Payload->cfg, 'modules')){
+   			if (property_exists($Payload->cfg->modules, 'DF')){
+     			if (property_exists($Payload->cfg->modules->DF, 'cut')){
+		    		$this->sendDataToDevices('Settings', 'cut', $Payload->cfg->modules->DF->cut);
+          }
+     			if (property_exists($Payload->cfg->modules->DF, 'fh')){
+		    		$this->sendDataToDevices('Settings', 'fh', $Payload->cfg->modules->DF->fh);
+          }
+        }
+   			if (property_exists($Payload->cfg->modules, 'US')){
+     			if (property_exists($Payload->cfg->modules->US, 'enabled')){
+		    		$this->sendDataToDevices('Settings', 'US', $Payload->cfg->modules->US->enabled);
+          }
+        }
 			}
 		}
 

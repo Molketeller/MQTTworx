@@ -62,6 +62,24 @@ class MQTTworxSettings extends IPSModule
 				$this->SetValue('WRX_Autolock', $Payload);
 				break;
 
+			case "cut":
+				$this->RegisterVariableBoolean('WRX_DF_cut', $this->Translate('OLM as border'), 'Switch', false);
+				$this->EnableAction('WRX_DF_cut');
+				$this->SetValue('WRX_DF_cut', $Payload);
+				break;
+
+			case "fh":
+				$this->RegisterVariableBoolean('WRX_DF_fh', $this->Translate('OLM as shortcuts'), 'Switch', false);
+				$this->EnableAction('WRX_DF_fh');
+				$this->SetValue('WRX_DF_fh', $Payload);
+				break;
+
+			case "US":
+				$this->RegisterVariableBoolean('WRX_US', $this->Translate('Use ACS'), 'Switch', false);
+				$this->EnableAction('WRX_US');
+				$this->SetValue('WRX_US', $Payload);
+				break;
+
 			case "t":
 				if (!IPS_VariableProfileExists('LockDelay.WRX')) {
 					IPS_CreateVariableProfile('LockDelay.WRX', 1);
@@ -91,6 +109,15 @@ class MQTTworxSettings extends IPSModule
 			case 'WRX_Autolock':
 				$this->SetAutolock($Value);
 				break;
+			case 'WRX_DF_cut':
+				$this->SetDFcut($Value);
+				break;
+			case 'WRX_DF_fh':
+				$this->SetDFfh($Value);
+				break;
+			case 'WRX_US':
+				$this->SetUS($Value);
+				break;
 			case 'WRX_AutolockDelay':
 				$this->SetAutolockDelay($Value);
 				break;
@@ -115,6 +142,27 @@ public function SetAutolock(bool $Value)
 #================================================================================================
 	{
 		$this->sendJson('{ "al": { "lvl": '.($Value?1:0).'} }');
+    }
+		
+#================================================================================================
+public function SetDFcut(bool $Value) 
+#================================================================================================
+	{
+		$this->sendJson('{ "modules": { "DF": { "cut": '.($Value?1:0).' } } }');
+    }
+		
+#================================================================================================
+public function SetDFfh(bool $Value) 
+#================================================================================================
+	{
+		$this->sendJson('{ "modules": { "DF": { "fh": '.($Value?1:0).' } } }');
+    }
+		
+#================================================================================================
+public function SetUS(bool $Value) 
+#================================================================================================
+	{
+		$this->sendJson('{ "modules": { "US": { "enabled": '.($Value?1:0).' } } }');
     }
 		
 #================================================================================================
