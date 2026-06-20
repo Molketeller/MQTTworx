@@ -15,17 +15,17 @@
 	<table>
 	  <tr>
 		<td>1.</td>
-		<td><b><i>WRX_Autolock($ID, $Value)</i></b></td>
+		<td><b><i>WRX_SetAutolock($ID, $Value)</i></b></td>
 		<td>automatische Tastatursperre ein/ausschalten</td>
 	  </tr>
 	  <tr>
 		<td>2.</td>
-		<td><b><i>WRX_AutolockDelay($ID, $Value)</i></b></td>
+		<td><b><i>WRX_SetAutolockDelay($ID, $Value)</i></b></td>
 		<td>Zeitverzögerung für die Tastatursperre</td>
 	  </tr>
 	  <tr>
 		<td>3.</td>
-		<td><b><i>WRX_Torque($ID, $Value)</i></b></td>
+		<td><b><i>WRX_SetTorque($ID, $Value)</i></b></td>
 		<td>Anpassung des Antriebsmomentes</td>
 	  </tr>
 	  <tr>
@@ -35,12 +35,12 @@
 	  </tr>
 	  <tr>
 		<td>5.</td>
-		<td><b><i>WRX_DF_fh($ID, $Value)</i></b></td>
+		<td><b><i>WRX_SetDFfh($ID, $Value)</i></b></td>
 		<td>OLM für Shortcuts verwenden</td>
 	  </tr>
 	  <tr>
 		<td>6.</td>
-		<td><b><i>WRX_US($ID, $Value)</i></b></td>
+		<td><b><i>WRX_SetUS($ID, $Value)</i></b></td>
 		<td>ACS verwenden</td>
 	  </tr>
 	</table>
